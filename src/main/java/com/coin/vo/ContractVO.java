@@ -44,22 +44,39 @@ CREATE TABLE CONTRACT(
 
 );
 	 */
+
 	
-	String id;
-	String rating;
+	
+	int id;
+	
+	
+	public ContractVO() {
+		super();
+	}
+	public ContractVO(int id, double rating, String comments, String worker_id, int work_id) {
+		super();
+		this.id = id;
+		this.rating = rating;
+		this.comments = comments;
+		this.worker_id = worker_id;
+		this.work_id = work_id;
+	}
+	double rating;
 	String comments;
 	String worker_id;
-	String work_id;
-	public String getId() {
+	int work_id;
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
-	public String getRating() {
+	
+	
+	public double getRating() {
 		return rating;
 	}
-	public void setRating(String rating) {
+	public void setRating(double rating) {
 		this.rating = rating;
 	}
 	public String getComments() {
@@ -74,10 +91,11 @@ CREATE TABLE CONTRACT(
 	public void setWorker_id(String worker_id) {
 		this.worker_id = worker_id;
 	}
-	public String getWork_id() {
+	
+	public int getWork_id() {
 		return work_id;
 	}
-	public void setWork_id(String work_id) {
+	public void setWork_id(int work_id) {
 		this.work_id = work_id;
 	}
 	@Override

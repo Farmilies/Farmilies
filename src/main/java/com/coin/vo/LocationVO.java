@@ -17,7 +17,7 @@ public class LocationVO {
 			road_address                  		VARCHAR2(500)		 NULL 
 	 */
 		
-	String id;
+	int id;
 	String address_name;
 	String address_type;
 	double x;
@@ -26,10 +26,11 @@ public class LocationVO {
 	String road_address;
 	
 	
-	public String getId() {
+
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getAddress_name() {
@@ -48,7 +49,7 @@ public class LocationVO {
 		return x;
 	}
 	public void setX(double x) {
-		this.x = x;
+		this.x = x; 
 	}
 	public double getY() {
 		return y;

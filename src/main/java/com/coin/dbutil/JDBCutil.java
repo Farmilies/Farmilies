@@ -22,7 +22,7 @@ public class JDBCutil {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        
+       
 	}
 	
 	public static Connection getConnection() throws Exception {

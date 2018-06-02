@@ -44,24 +44,12 @@ CREATE TABLE CONTRACT(
 
  */
 	
-	String id;
-	String pic_id;
+	int id;
+	int pic_id;
 	String hirer_id;
 	String title;
 	String description;
-	String location_id;
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	public String getPic_id() {
-		return pic_id;
-	}
-	public void setPic_id(String pic_id) {
-		this.pic_id = pic_id;
-	}
+	int location_id;
 	public String getHirer_id() {
 		return hirer_id;
 	}
@@ -80,10 +68,22 @@ CREATE TABLE CONTRACT(
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public String getLocation_id() {
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getPic_id() {
+		return pic_id;
+	}
+	public void setPic_id(int pic_id) {
+		this.pic_id = pic_id;
+	}
+	public int getLocation_id() {
 		return location_id;
 	}
-	public void setLocation_id(String location_id) {
+	public void setLocation_id(int location_id) {
 		this.location_id = location_id;
 	}
 	@Override

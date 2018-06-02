@@ -20,17 +20,12 @@ CREATE TABLE USER_GROUPS(
 );
 	 */
 	
-	String id;
+	int id;
 	String name;
 	Date update_at;
 	Date create_at;
-	String location_id;
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
+	int location_id;
+	
 	public String getName() {
 		return name;
 	}
@@ -39,7 +34,7 @@ CREATE TABLE USER_GROUPS(
 	}
 
 	public Date getUpdate_at() {
-		return update_at;
+		return update_at; 
 	}
 	public void setUpdate_at(Date update_at) {
 		this.update_at = update_at;
@@ -50,10 +45,17 @@ CREATE TABLE USER_GROUPS(
 	public void setCreate_at(Date create_at) {
 		this.create_at = create_at;
 	}
-	public String getLocation_id() {
+
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getLocation_id() {
 		return location_id;
 	}
-	public void setLocation_id(String location_id) {
+	public void setLocation_id(int location_id) {
 		this.location_id = location_id;
 	}
 	@Override

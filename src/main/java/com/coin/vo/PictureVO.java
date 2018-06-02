@@ -15,8 +15,8 @@ CREATE TABLE PICTURES(
 	 */
 	
 	
-	String id;
-	String picname;
+	int id;
+	String picname; 
 	String pic_loc;
 	public String getPic_loc() {
 		return pic_loc;
@@ -24,14 +24,14 @@ CREATE TABLE PICTURES(
 	public void setPic_loc(String pic_loc) {
 		this.pic_loc = pic_loc;
 	}
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
 	public String getPicname() {
 		return picname;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	public void setPicname(String picname) {
 		this.picname = picname;

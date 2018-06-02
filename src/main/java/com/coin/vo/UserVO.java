@@ -53,8 +53,33 @@ CREATE TABLE CONTRACT(
 	String password;
 	String first_name;
 	String last_name;
-	String group_id;
-	String picture_id;
+	int group_id;
+	int picture_id;
+	
+	
+	
+	
+	public UserVO(String id, Date update_at, Date create_at, String email, String password, String first_name,
+			String last_name, int group_id, int picture_id) {
+		super();
+		this.id = id;
+		this.update_at = update_at;
+		this.create_at = create_at;
+		this.email = email;
+		this.password = password;
+		this.first_name = first_name;
+		this.last_name = last_name;
+		this.group_id = group_id;
+		this.picture_id = picture_id;
+		 
+	}
+	
+	
+	public UserVO() {
+		// TODO Auto-generated constructor stub
+	}
+
+
 	public String getId() {
 		return id;
 	}
@@ -94,21 +119,22 @@ CREATE TABLE CONTRACT(
 	public String getLast_name() {
 		return last_name;
 	}
+	public int getGroup_id() {
+		return group_id;
+	}
+	public void setGroup_id(int group_id) {
+		this.group_id = group_id;
+	}
+	public int getPicture_id() {
+		return picture_id;
+	}
+	public void setPicture_id(int picture_id) {
+		this.picture_id = picture_id;
+	}
 	public void setLast_name(String last_name) {
 		this.last_name = last_name;
 	}
-	public String getGroup_id() {
-		return group_id;
-	}
-	public void setGroup_id(String group_id) {
-		this.group_id = group_id;
-	}
-	public String getPicture_id() {
-		return picture_id;
-	}
-	public void setPicture_id(String picture_id) {
-		this.picture_id = picture_id;
-	}
+	
 	@Override
 	public String toString() {
 		return "UserVO [id=" + id + ", update_at=" + update_at + ", create_at=" + create_at + ", email=" + email

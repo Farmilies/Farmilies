@@ -8,16 +8,66 @@ import java.util.List;
 
 import com.coin.dbutil.JDBCutil;
 import com.coin.vo.UserGroupVO;
+import com.coin.vo.UserVO;
 
 public class UserGroupDAO {
-	String table_name = "user_groups";
-	static String[] columnNames = {
+	static final String table_name = "user_groups";
+	static final String[] columnNames = {
 			"id",
 			"name",
 			"update_at",
 			"create_at"
 	};
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	static final String insert_values;
+	static {
+		StringBuilder sb = new StringBuilder();
+		
+		sb.append("(");
+		for(int i = 0 ; i < columnNames.length ; i++) {
+			sb.append(columnNames[i]);
+			if(i != columnNames.length -1) {
+				sb.append(",");
+			}
+		}
+		sb.append(") values (");
+		for(int i = 0 ; i < columnNames.length ; i++) {
+			sb.append("?");
+			if(i != columnNames.length -1) {
+				sb.append(",");
+			}
+		}
+		sb.append(")");
+		
+		insert_values = sb.toString();
+	}
 	
 	public List<UserGroupVO> getListBy(String type, String val , boolean like) {
 		Connection con = null;
@@ -51,7 +101,7 @@ public class UserGroupDAO {
 			
 			while(rs.next()) {
 				UserGroupVO vo = new UserGroupVO();
-				vo.setId(rs.getString(columnNames[0]));
+				vo.setId(rs.getInt(columnNames[0]));
 				vo.setName(rs.getString(columnNames[1]));
 				vo.setCreate_at(rs.getDate(columnNames[2]));
 				vo.setUpdate_at(rs.getDate(columnNames[3]));
@@ -68,4 +118,5 @@ public class UserGroupDAO {
 		}
 		return list;
 	}
+	
 }
