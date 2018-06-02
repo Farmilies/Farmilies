@@ -2,6 +2,8 @@
   "name": "Farmilies",
   "version": "0.0.1",
   "dependencies": {
-    "oracledb": "latest"
+    "cors": "^2.8.4",
+    "oracledb": "latest",
+    "express": "latest"
   }
 }
