@@ -28,7 +28,7 @@ COMMENT ON COLUMN USERGROUPS.create_at is 'create_at';
 CREATE TABLE PICTURES(
 		id                            		NUMBER(12)		 NOT NULL,
 		picname                       		VARCHAR2(50)		 NULL ,
-		pic_loc                       		VARCHAR2(500)		 NULL 
+		pic_loc                       		VARCHAR2(500)		 NOT NULL
 );
 
 COMMENT ON TABLE PICTURES is 'PICTURES';
@@ -69,11 +69,11 @@ COMMENT ON COLUMN USERS.picture_id is 'picture_id';
 /**********************************/
 CREATE TABLE LOCATIONS(
 		id                            		NUMBER(10)		 NOT NULL,
-		address_name                  		VARCHAR2(500)		 NOT NULL,
-		address_type                  		VARCHAR2(11)		 NOT NULL,
+		address_name                  		VARCHAR2(500)		 NULL ,
+		address_type                  		VARCHAR2(11)		 NULL ,
 		x                             		DOUBLE PRECISION		 NOT NULL,
 		y                             		DOUBLE PRECISION		 NOT NULL,
-		region_address                		VARCHAR2(500)		 NOT NULL,
+		region_address                		VARCHAR2(500)		 NULL ,
 		road_address                  		VARCHAR2(500)		 NULL 
 );
 
@@ -113,6 +113,7 @@ COMMENT ON COLUMN WORKS.location_id is 'location_id';
 /**********************************/
 CREATE TABLE CONTRACTS(
 		id                            		NUMBER(10)		 NOT NULL,
+		stage                         		NUMBER(3)		 NULL ,
 		rating                        		NUMBER(10,2)		 NULL ,
 		comments                      		VARCHAR2(2000)		 NULL ,
 		worker_id                     		VARCHAR2(50)		 NOT NULL,
@@ -121,6 +122,7 @@ CREATE TABLE CONTRACTS(
 
 COMMENT ON TABLE CONTRACTS is 'CONTRACTS';
 COMMENT ON COLUMN CONTRACTS.id is 'id';
+COMMENT ON COLUMN CONTRACTS.stage is 'stage';
 COMMENT ON COLUMN CONTRACTS.rating is 'rating';
 COMMENT ON COLUMN CONTRACTS.comments is 'comments';
 COMMENT ON COLUMN CONTRACTS.worker_id is 'worker_id';
