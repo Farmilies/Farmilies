@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>W3.CSS Template</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    html,
+    body {
+      position: relative;
+    }
+
+    ,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: "Raleway", sans-serif
+    }
+
+    .selection {
+      position: relative;
+      height: 500px;
+      margin-top: 10px;
+      overflow: auto;
+    }
+
+    .pag {
+      list-style: none;
+      padding-left: 0px;
+      text-align: center;
+    }
+
+    ul {
+      list-style: none;
+      width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    li {
+      border: 0;
+      float: left;
+      margin-right: 20;
+    }
+  </style>
+</head>
+
+<body class="w3-light-grey">
+  <!-- Top container -->
+  <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+    <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();">
+      <i class="fa fa-bars"></i> &nbsp;Menu</button>
+    <span class="w3-bar-item w3-right">Logo</span>
+  </div>
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+  <!-- !PAGE CONTENT! -->
+  <div class="w3-main" style="margin-left:300px;margin-top:43px;">
+    <!-- Header -->
+    <header class="w3-container" style="padding-top:22px">
+      <h5>
+        <b> 농부의 이름과 사는 곳을 입력하세요</b>
+      </h5>
+    </header>
+    <div class="w3-margin-bottom">
+      <form action="" method="post">
+        <div class="w3-row-padding">
+          <label>이름 :</label>
+          <input class="col-md-4" size="40" name="name" value="" type="text"> &nbsp;&nbsp;
+          <label>주소 :</label>
+          <input class="col-md-4" name="adress_name" value="" size="40" type="text">
+          <img id="search" src="bootstrap3/img/search.png"> </div>
+      </form>
+    </div>
+    <div class="w3-panel">
+      <div class="w3-row-padding" style="border-width:1px; border-color:gray; border-style:solid; margin:0 -16px">
+        <div class="" data-spy="scroll" data-target="#navbar-ex">
+          <div id="navbar-ex">
+            <ul class="nav nav-tabs" role="tablelist"> </ul>
+            <div class="w3-container selection">
+              <div>
+                <a href=""> </a>
+              </div>
+              <div>
+                <h1> ��ȸ���� </h1>
+              </div>
+              <div>
+                <h1> ��ȸ���� </h1>
+              </div>
+              <div>
+                <h1> ��ȸ���� </h1>
+              </div>
+              <div>
+                <h1> ��ȸ���� </h1>
+              </div>
+              <div>
+                <h1> ��ȸ���� </h1>
+              </div>
+              <div>
+                <h1> ��ȸ���� </h1>
+              </div>
+              <div>
+                <h1> ��ȸ���� </h1>
+              </div>
+              <div>
+                <h1> ��ȸ���� </h1>
+              </div>
+              <div>
+                <h1> ��ȸ���� </h1>
+              </div>
+              <div>
+                <h1> ��ȸ���� </h1>
+              </div>
+              <div>
+                <h1> ��ȸ���� </h1>
+              </div>
+              <div>
+                <h1> ��ȸ���� </h1>
+              </div>
+              <div>
+                <h1 draggable="true"> ��ȸ���� </h1>
+              </div>
+              <div>
+                <h1> ��ȸ���� </h1>
+              </div>
+              <div>
+                <h1> ��ȸ���� </h1>
+              </div>
+              <div>
+                <h1> ��ȸ���� </h1>
+              </div>
+              <div>
+                <h1> ��ȸ���� </h1>
+              </div>
+              <div>
+                <h1> ��ȸ���� </h1>
+              </div>
+              <div>
+                <h1> ��ȸ���� </h1>
+              </div>
+              <div>
+                <h1> ��ȸ���� </h1>
+              </div>
+              <div>
+                <h1> ��ȸ���� </h1>
+              </div>
+              <div>
+                <h1> ��ȸ���� </h1>
+              </div>
+              <div>
+                <h1> ��ȸ���� </h1>
+              </div>
+              <div>
+                <h1> ��ȸ���� </h1>
+              </div>
+              <div>
+                <h1> ��ȸ���� </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <hr>
+  <div class="pag">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1">
+            <img id="search" src="bootstrap3/img/left-arrow.png"> </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">1</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">2</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">3</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">4</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">5</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">
+            <img id="search" src="bootstrap3/img/right-arrow.png"> </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <!-- Footer -->
+  <footer style="text-align:center" class="w3-container w3-padding-16 w3-light-grey">
+    <p> CopyRight by CoIN &amp; NH-KISA </p>
+  </footer>
+  <!-- End page content -->
+  <script>
+    // Get the Sidebar
+    var mySidebar = document.getElementById("mySidebar");
+
+    // Get the DIV with overlay effect
+    var overlayBg = document.getElementById("myOverlay");
+
+    // Toggle between showing and hiding the sidebar, and add overlay effect
+    function w3_open() {
+        if (mySidebar.style.display === 'block') {
+            mySidebar.style.display = 'none';
+            overlayBg.style.display = "none";
+        } else {
+            mySidebar.style.display = 'block';
+            overlayBg.style.display = "block";
+        }
+    }
+
+    // Close the sidebar with the close button
+    function w3_close() {
+        mySidebar.style.display = "none";
+        overlayBg.style.display = "none";
+    }
+  </script>
+  <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 10px;right:10px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:250px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo Free&nbsp;&nbsp;
+    <img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16">
+  </pingendo>
+</body>
+
+</html>
