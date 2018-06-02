@@ -1,9 +1,12 @@
 {
-  "name": "Farmilies",
+  "name": "test_nodejs",
   "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
-    "cors": "^2.8.4",
-    "oracledb": "latest",
-    "express": "latest"
+    "express": "3.2.6",
+    "ejs": "*"
   }
 }
