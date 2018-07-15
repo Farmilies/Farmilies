@@ -1,0 +1,87 @@
+<p>작업 지원자 관리</p>
+
+<table>
+    <tr>
+        <th>시민 이름</th>
+        <th>작업명</th>
+        <th>보상</th>
+        <th>날짜</th>
+        <th>현재 상태</th>
+        <th>취소</th>
+    </tr>
+    <% for(var i = 0; i < works.length; ++i){ %>
+        <tr>
+            <td> <%= works[i].name %> </td>
+            <td> <%= works[i].title %> </td>
+            <td> <%= works[i].reward %> </td>
+            <td> <%= works[i].date %> </td>
+            <td id="<%= works[i].id %>_status"> <%= works[i].status %> </td>
+            <td>
+                <% if (works[i].status == '대기중'){ %>
+                    <button id="<%= works[i].id %>_button" onclick="approve(<%= works[i].id %>)">승인</button>
+                <% } else if(works[i].status == '작업확정'){%>
+                    <button id="<%= works[i].id %>_button" onclick="cancel(<%=works[i]%>)">취소</button>
+                <% } else if(works[i].status == '취소'){%>
+                    <p>취소된 작업</p>
+                <% } else {%>
+                    <p>오류</p>
+                <% } %>
+            </td>
+            <td id="<%= works[i].id %>" class="hide"><%= JSON.stringify(works[i]) %></td>
+        </tr>
+    <% } %>
+</table>
+
+
+<script>
+    function approve(id){
+        var work = JSON.parse(document.getElementById(id).innerHTML);
+        $.ajax({
+            type : "GET",
+            url : "/change_work_status",
+            dataType : 'text',
+            data : {
+                "id" : work.id,
+                "status" : "작업확정",
+                "citizen" : work.citizen_id,
+                "address" : work.address_name,
+                "reward" : Number(work.reward),
+                "when" : work.date
+            },
+            error : function() {
+                alert("실패");
+            },
+            success : function(data){
+                $("#"+work.id+"_button").onclick = "";
+                $("#"+work.id+"_status").html("작업확정");
+                $("#"+work.id+"_button").html("취소");
+                $("#"+work.id+"_button").onclick = function() {
+                    alert("onclick changed");
+                    cancel(work.id);
+                };
+                alert($("#"+work.id+"_button").onclick)
+                $("#"+work.id+"_button").setAttribute("onclick", "javascript: cancel("+work.id+");");
+                alert($("#"+work.id+"_button").onclick)
+            }
+        });
+    }
+    function cancel(work){
+        $.ajax({
+            type : "GET",
+            url : "/change_work_status",
+            dataType : 'text',
+            data : {
+                id : work.id,
+                status : "취소"
+            },
+            error : function() {
+                alert("실패");
+            },
+            success : function(data){
+                $("#"+work.id+"_status").html("취소");
+                $("#"+work.id+"_button").contents().unwrap().wrap('<p></p>');
+            }
+        });
+    }
+
+</script>
