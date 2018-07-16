@@ -6,3 +6,21 @@ body {
 a {
   color: #00B7FF;
 }
+
+.hide{
+  display: none;
+}
+
+.works{
+
+}
+
+#map_search{
+  width: 750px;
+  height: 500px;
+}
+
+#map_detail{
+  width: 560px;
+  height: 500px;
+}
