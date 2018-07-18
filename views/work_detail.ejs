@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/css/bootstrap.css' />
+    <link rel='stylesheet' href='/stylesheets/index.css' />
+    <script src="/js/bootstrap.js"></script>
+</head>
+
+<body>
+<% include ./menu.ejs %>
+
+<div class="row">
+
+    <!--<p><%= work['id'] %></p>-->
+    <!--<p><%= work['farmer_id'] %></p>-->
+    <!--<p><%= work['title'] %></p>-->
+    <!--<p><%= work['description'] %></p>-->
+    <!--<p><%= work['reward'] %></p>-->
+    <!--<p><%= work['latitude'] %></p>-->
+    <!--<p><%= work['longitude'] %></p>-->
+    <!--<p><%= work['address_name'] %></p>-->
+    <!--<p><%= work['name'] %></p>-->
+
+    <!-- Post Content Column -->
+    <div class="col-lg-8">
+
+        <!-- Title -->
+        <h1 class="mt-4"> <%= work['title'] %></h1>
+
+        <!-- Author -->
+        <p class="lead">by
+            <%= work['name'] %>
+        </p>
+
+        <hr>
+
+        <!-- Date/Time -->
+        <p>Posted on January 1, 2018 at 12:00 PM</p>
+
+        <hr>
+
+        <!-- Preview Image -->
+        <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
+
+        <hr>
+
+        <!-- Post Content -->
+        <p><%= work['description'] %></p>
+
+    </div>
+
+    <!-- Sidebar Widgets Column -->
+    <div class="col-md-4">
+
+        <!-- Search Widget -->
+        <div class="card my-4">
+            <h5 class="card-header">Search</h5>
+            <div class="card-body">
+                <div class="input-group">
+                    <form action="/search">
+                        <input type="text" class="form-control" placeholder="Search for..." name="address">
+                        <span class="input-group-btn">
+                            <button class="btn btn-secondary" type="submit">Go!</button>
+                        </span>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categories Widget -->
+        <div class="card my-4">
+            <h5 class="card-header">신청</h5>
+            <div class="card-body">
+                <div class="row">
+                    <% if(user_id == work.id){ %>
+                        <button disabled>내가 올린 공고입니다.</button>
+                    <% } else {%>
+                        <button id="applicate" onclick="applicate()">지원하기</button>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+
+        <!-- Side Widget -->
+        <div class="card my-4">
+            <h5 class="card-header">map</h5>
+            <div id="map_detail"></div>
+        </div>
+    </div>
+
+</div>
+
+<p class="hide" id="work"><%= JSON.stringify(work) %></p>
+<p class="hide" id="user_id"><%= user_id %></p>
+<!-- /.row -->
+
+<% include ./footer.ejs %>
+
+<script src="/js/jquery.min.js"></script>
+
+<script>
+    var work = $("#work").text();
+    work = JSON.parse(work);
+    var user_id = $("#user_id").text();
+
+    function applicate(){
+        alert("지원")
+    }
+
+    function cancel(){
+        alert("취소")
+    }
+</script>
+<script>
+    $.ajax({
+        type : "GET",
+        url : "/ajax_get_contract_status",
+        dataType : 'text',
+        data : {
+            applicant_id : user_id,
+            work_id : work.id
+        },
+        error : function() {
+            alert("실패");
+        },
+        success : function(data){
+            if(data=='1'){
+                $("#applicate").html("취소");
+                $("#applicate").onclick = function() {
+                    cancel(work.id);
+                };
+            }
+        }
+    });
+</script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0d3c6299a2a6f27a3c7021914091f148&libraries=services,clusterer,drawing"></script>
+<script type="text/javascript" src="../map/work_detail.js"></script>
+
+</body>
+
+</html>
