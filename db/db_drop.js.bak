@@ -6,7 +6,6 @@ var users = function (){
     conn.query(sql, function (err, result){
         if (err){
             throw err;
-
         }
         console.log("USER TABLE DROPPED");
     });
