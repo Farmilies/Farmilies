@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/css/bootstrap.css' />
+    <link rel='stylesheet' href='/stylesheets/index.css' />
+    <script src="/js/bootstrap.js"></script>
+</head>
+<body>
+<% include ./menu.ejs %>
+
+<% for(var i = 0 ; i < people.length; ++i) { %>
+    <p> <%= people[i].title %> </p>
+    <p> <%= people[i].reward %> </p>
+    <p> <%= people[i].name %> </p>
+    <p> <%= people[i].date %> </p>
+    <p> <%= people[i].status %> </p>
+<% } %>
+
+<% include ./footer.ejs %>
+</body>
+</html>
